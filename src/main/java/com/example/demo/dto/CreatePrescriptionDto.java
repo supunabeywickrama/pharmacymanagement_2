@@ -6,6 +6,6 @@ import java.util.List;
 
 @Data
 public class CreatePrescriptionDto {
-    private Long patientId;
+    private Integer patientId;
     private List<DrugQuantityDto> drugs;
 }
