@@ -19,12 +19,12 @@ public class DrugController {
     }
 
     @DeleteMapping("/drugs/{drugId}")
-    public void deleteDrug(@PathVariable Long drugId){
+    public void deleteDrug(@PathVariable Integer drugId){
         drugService.deleteDrug(drugId);
     }
 
     @GetMapping("/drugs/{drugId}")
-    public Drug getDrugById(@PathVariable Long drugId){
+    public Drug getDrugById(@PathVariable Integer drugId){
         return drugService.getDrugById(drugId);
     }
 
@@ -34,7 +34,7 @@ public class DrugController {
     }
 
     @PutMapping("/drugs/{drugId}")
-    public void updateDrug(@PathVariable Long drugId,@RequestBody CreateDrugDto createDrugDto){
+    public void updateDrug(@PathVariable Integer drugId,@RequestBody CreateDrugDto createDrugDto){
         drugService.updateDrug(drugId,createDrugDto);
     }
 

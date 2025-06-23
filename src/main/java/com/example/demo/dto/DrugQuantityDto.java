@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class DrugQuantityDto {
-    private Long drugId;
+    private Integer drugId;
     private Integer quantity;
 }

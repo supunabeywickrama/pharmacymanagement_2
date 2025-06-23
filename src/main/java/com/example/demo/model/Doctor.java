@@ -10,6 +10,7 @@ public class Doctor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer doctorId;
     private String name;
+    private String specialization;
     private Integer serviceYears;
     private String address;
     private String email;

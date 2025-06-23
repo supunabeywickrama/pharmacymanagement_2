@@ -11,7 +11,7 @@ import lombok.Data;
 public class Drug {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long drugId;
+    private Integer drugId;
     private String name;
     private Double unitPrice;
     private Integer quantity;

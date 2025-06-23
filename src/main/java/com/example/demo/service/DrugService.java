@@ -22,11 +22,11 @@ public class DrugService {
         return drugRepository.save(drug);
     }
 
-    public void deleteDrug(Long drugId) {
+    public void deleteDrug(Integer drugId) {
         drugRepository.deleteById(drugId);
     }
 
-    public Drug getDrugById(Long drugId) {
+    public Drug getDrugById(Integer drugId) {
         Drug drug = drugRepository.findById(drugId).orElse(null);
         return drug;
     }
@@ -35,7 +35,7 @@ public class DrugService {
         return drugRepository.findAll();
     }
 
-    public void updateDrug(Long drugId, CreateDrugDto createDrugDto)  {
+    public void updateDrug(Integer drugId, CreateDrugDto createDrugDto)  {
         Drug drug =  drugRepository.findById(drugId).orElse(null);
 
         if(createDrugDto.getName() != null){

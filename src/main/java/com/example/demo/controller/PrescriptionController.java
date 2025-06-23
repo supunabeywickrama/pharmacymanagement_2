@@ -17,12 +17,12 @@ public class PrescriptionController {
     }
 
     @GetMapping("/prescriptions/{id}")
-    public Prescription getPrescription(@PathVariable Long id) {
+    public Prescription getPrescription(@PathVariable Integer id) {
         return prescriptionService.getPrescriptionById(id);
     }
 
     @DeleteMapping("/prescriptions/{id}")
-    public void deletePrescription(@PathVariable Long id) {
+    public void deletePrescription(@PathVariable Integer id) {
         prescriptionService.deletePrescriptionById(id);
     }
 }

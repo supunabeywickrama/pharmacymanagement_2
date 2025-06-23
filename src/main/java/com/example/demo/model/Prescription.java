@@ -11,9 +11,11 @@ import java.util.List;
 public class Prescription {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long prescriptionId;
-    private Long patientId;
+    private Integer prescriptionId;
+    private Integer patientId;
     @OneToMany(mappedBy = "prescription", cascade = CascadeType.ALL)
     @JsonManagedReference
     private List<PrescriptionDrug> drugs;
+    @OneToOne(mappedBy = "prescription")
+    private Invoice invoice;
 }

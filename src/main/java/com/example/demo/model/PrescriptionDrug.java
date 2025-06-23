@@ -9,7 +9,7 @@ import lombok.Data;
 public class PrescriptionDrug {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
     @ManyToOne
     @JoinColumn(name = "prescription_Id")
     @JsonBackReference
