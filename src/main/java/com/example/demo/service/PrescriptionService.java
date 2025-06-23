@@ -40,11 +40,11 @@ public class PrescriptionService {
         return prescriptionRepository.save(prescription);
     }
 
-    public Prescription getPrescriptionById(Long id) {
+    public Prescription getPrescriptionById(Integer id) {
         return prescriptionRepository.findById(id).orElse(null);
     }
 
-    public void deletePrescriptionById(Long id) {
+    public void deletePrescriptionById(Integer id) {
         prescriptionRepository.deleteById(id);
     }
 }
