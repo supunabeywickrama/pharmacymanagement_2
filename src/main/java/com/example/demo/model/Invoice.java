@@ -14,7 +14,7 @@ public class Invoice {
     private Double totalAmount;
 
     @OneToOne
-    @JoinColumn(name = "prescription_id", referencedColumnName = "prescriptionId")
+    //@JoinColumn(name = "prescriptionId", referencedColumnName = "prescriptionId")
     private Prescription prescription;
 }
 

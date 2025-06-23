@@ -36,7 +36,7 @@ public class PrescriptionService {
             prescriptionDrugs.add(prescriptionDrug);
         }
 
-        prescription.setDrugs(prescriptionDrugs);
+        prescription.setPrescriptionDrugs(prescriptionDrugs);
         return prescriptionRepository.save(prescription);
     }
 

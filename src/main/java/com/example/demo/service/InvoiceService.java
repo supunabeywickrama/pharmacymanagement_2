@@ -26,7 +26,7 @@ public class InvoiceService {
         Prescription prescription = prescriptionRepository.findById(prescriptionId).orElse(null);
         //List<DrugQuantityDto> drugQuantity = new ArrayList<>();
         Double totalAmount = 0.0;
-        for (PrescriptionDrug drugQuantity : prescription.getDrugs()){
+        for (PrescriptionDrug drugQuantity : prescription.getPrescriptionDrugs()){
             Drug drug = drugQuantity.getDrug();
             Integer amount = drugQuantity.getQuantity();
             Double unitPrice = drug.getUnitPrice();
@@ -42,7 +42,7 @@ public class InvoiceService {
         return new InvoiceResponseDto(
                 invoice.getInvoiceId(),
                 invoice.getPatientId(),
-                prescription.getDrugs(),
+                prescription.getPrescriptionDrugs(),
                 invoice.getTotalAmount()
         );
     }
