@@ -1,6 +1,5 @@
 package com.example.demo.dto;
 
-import com.example.demo.model.Drug;
 import com.example.demo.model.PrescriptionDrug;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,11 +8,8 @@ import java.util.List;
 
 @Data
 @AllArgsConstructor
-public class InvoiceResponseDto {
-    private Integer invoiceId;
+public class PrescriptionResponseDto {
+    private Integer prescriptionId;
     private Integer patientId;
-    private Double totalAmount;
-    private List<PrescriptionDrug> drugs;
-
-
+    private List <DrugQuantityDto> drugs;
 }

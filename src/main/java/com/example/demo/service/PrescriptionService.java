@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import com.example.demo.dto.CreatePrescriptionDto;
 import com.example.demo.dto.DrugQuantityDto;
+import com.example.demo.dto.PrescriptionResponseDto;
 import com.example.demo.model.Drug;
 import com.example.demo.model.Prescription;
 import com.example.demo.model.PrescriptionDrug;
@@ -19,7 +20,7 @@ public class PrescriptionService {
     PrescriptionRepository prescriptionRepository;
     DrugRepository drugRepository;
 
-    public Prescription createPrescription(CreatePrescriptionDto createPrescriptionDto) {
+    public PrescriptionResponseDto createPrescription(CreatePrescriptionDto createPrescriptionDto) {
         Prescription prescription = new Prescription();
         prescription.setPatientId(createPrescriptionDto.getPatientId());
 
@@ -37,7 +38,13 @@ public class PrescriptionService {
         }
 
         prescription.setPrescriptionDrugs(prescriptionDrugs);
-        return prescriptionRepository.save(prescription);
+        prescriptionRepository.save(prescription);
+
+        return new PrescriptionResponseDto(
+                prescription.getPrescriptionId(),
+                prescription.getPatientId(),
+                createPrescriptionDto.getDrugs()
+        );
     }
 
     public Prescription getPrescriptionById(Integer id) {

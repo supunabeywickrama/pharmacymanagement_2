@@ -13,9 +13,9 @@ public class Prescription {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer prescriptionId;
     private Integer patientId;
-    @OneToMany(mappedBy = "prescription", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "prescription", cascade = CascadeType.ALL)
     @JsonManagedReference
     private List<PrescriptionDrug> prescriptionDrugs;
-    @OneToOne(mappedBy = "prescription")
-    private Invoice invoice;
+//    @OneToOne(mappedBy = "prescription")
+//    private Invoice invoice;
 }

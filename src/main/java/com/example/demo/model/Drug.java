@@ -1,10 +1,10 @@
 package com.example.demo.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.List;
 
 @Entity
 @Data
@@ -15,4 +15,7 @@ public class Drug {
     private String name;
     private Double unitPrice;
     private Integer quantity;
+    @OneToMany(mappedBy = "drug", cascade = CascadeType.ALL)
+    @JsonBackReference
+    private List<PrescriptionDrug> prescriptionDrugs;
 }

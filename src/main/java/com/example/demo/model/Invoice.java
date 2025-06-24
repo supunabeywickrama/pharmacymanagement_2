@@ -12,10 +12,12 @@ public class Invoice {
 
     private Integer patientId;
     private Double totalAmount;
-
     @OneToOne
-    //@JoinColumn(name = "prescriptionId", referencedColumnName = "prescriptionId")
     private Prescription prescription;
+
+//    @OneToOne
+//    //@JoinColumn(name = "prescriptionId", referencedColumnName = "prescriptionId")
+//    private Prescription prescription;
 }
 
 

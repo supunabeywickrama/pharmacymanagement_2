@@ -37,13 +37,15 @@ public class InvoiceService {
         //invoice.setPrescriptionId(prescriptionId);
         invoice.setPatientId(prescription.getPatientId());
         invoice.setTotalAmount(totalAmount);
+        invoice.setPrescription(prescription);
         invoiceRepository.save(invoice);
 
         return new InvoiceResponseDto(
                 invoice.getInvoiceId(),
                 invoice.getPatientId(),
-                prescription.getPrescriptionDrugs(),
-                invoice.getTotalAmount()
+                invoice.getTotalAmount(),
+                prescription.getPrescriptionDrugs()
+
         );
     }
 }
